@@ -1,20 +1,39 @@
-import { Link } from "react-router-dom"
+import { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../contexts/AuthContext'
+
+
 
 function Navbar() {
-  return (
-    <div className='w-full bg-indigo-900 text-white flex justify-center py-3'>
-          <div className="container flex justify-between text-lg">
-            <div className='text-1xl font-bold camelcase'><Link to='/home'>Blog Pessoal </Link></div>
+  const navigate = useNavigate()
 
-            <div className='flex gap-6'>
-              <div className='hover:underline'>Postagens</div>
-              <div className='hover:underline'>Temas</div>
-              <div className='hover:underline'>Cadastrar tema</div>
+  const { handleLogout } = useContext(AuthContext)
+
+  function logout() {
+      handleLogout()
+      alert('Usuário deslogado com sucesso')
+      navigate('/login')
+  }
+
+  
+
+  return (
+    <>
+     <div className='w-full bg-indigo-900 text-white flex justify-center py-4'>
+          <div className="container flex justify-between text-lg">
+          <Link to='/home' className='text-2xl font-bold uppercase'>Blog Pessoal</Link>
+
+            <div className='flex gap-4'>
+            <div className='hover:underline'>Postagens</div>
+            <Link to='/temas' className='hover:underline'>Temas</Link>
+              <Link to ='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
               <div className='hover:underline'>Perfil</div>
-              <div className='hover:underline'>Sair</div>
+              <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
+             
             </div>
           </div>
         </div>
+    </>
   )
 }
 

@@ -10,6 +10,7 @@ interface AuthContextProps {
     isLoading: boolean;
 }
 
+
 interface AuthProviderProps {
     children: ReactNode;
 }
@@ -20,7 +21,6 @@ export const AuthContext = createContext({} as AuthContextProps)
 
 export function AuthProvider({ children }: AuthProviderProps) {
 
-    
     const [usuario, setUsuario] = useState<UsuarioLogin>({
         id: 0,
         nome: '',
@@ -30,11 +30,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
         token: ''
     });
 
-    
-     
+
     const [isLoading, setIsLoading] = useState(false);
 
-    
     async function handleLogin(usuarioLogin: UsuarioLogin) {
 
         setIsLoading(true);
@@ -49,7 +47,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setIsLoading(false);
     }
 
-    
     function handleLogout() {
         setUsuario({
             id: 0,
@@ -60,6 +57,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
             token: '',
         })
     }
+
     return (
         <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading }}>
             {children}
