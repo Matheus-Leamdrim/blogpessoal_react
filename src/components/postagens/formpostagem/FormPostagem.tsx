@@ -4,7 +4,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
 import { buscar, atualizar, cadastrar } from '../../../services/Service';
-import { ToastAlerta } from '../../../ToastAlerta';
+import { ToastAlerta } from '../../../utils/ToastAlerta';
 
 
 function FormPostagem() {

@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthContext'
 import Postagem from '../../../models/Postagem'
 import { buscar, deletar } from '../../../services/Service'
-import { ToastAlerta } from '../../../ToastAlerta'
+import { ToastAlerta } from '../../../utils/ToastAlerta'
 
 function DeletarPostagem() {
   const [postagem, setPostagem] = useState<Postagem>({} as Postagem)

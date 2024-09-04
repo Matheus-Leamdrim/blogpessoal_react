@@ -4,7 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Tema from "../../../models/Tema";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
-import { ToastAlerta } from "../../../ToastAlerta";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormTema() {
 

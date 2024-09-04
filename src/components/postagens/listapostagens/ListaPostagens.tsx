@@ -5,7 +5,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import Postagem from '../../../models/Postagem';
 import { buscar } from '../../../services/Service';
 import CardPostagem from '../cardpostagem/CardPostagem';
-import { ToastAlerta } from '../../../ToastAlerta';
+import { ToastAlerta } from '../../../utils/ToastAlerta';
 
 function ListaPostagens() {
   const [postagens, setPostagens] = useState<Postagem[]>([]);
